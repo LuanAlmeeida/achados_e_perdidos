@@ -45,11 +45,40 @@ if($tipo == 'Achado'){
 
 # Verificando se o item foi inserido com sucesso
 	if($resultado_da_insercao){
-		echo "Item cadastrado com sucesso!";
+?>
+<script>
+	window.onload = function() {
+		alert("Item cadastrado com sucesso!");
+		window.location.href = "cadastrar.html";
+	}
+</script>
+<?php
 	}else{
 		echo "Erro ao cadastrar item.";
 	}
 }
+
+# Inserindo os dados na tabela perdidos se o tipo for igual a Perdido
+if($tipo == 'Perdido'){
+	$sql = "INSERT INTO perdidos (titulo, descricao, tipo, categoria, local, quem, data, foto) VALUES ('$titulo', '$descricao', '$tipo', '$categoria', '$local', '$quem', '$data', '$foto[name]')";
+	$resultado_da_insercao = mysqli_query($conexao, $sql);
+	
+
+# Verificando se o item foi inserido com sucesso
+	if($resultado_da_insercao){
+?>
+<script>
+	window.onload = function() {
+		alert("Item cadastrado com sucesso!");
+		window.location.href = "cadastrar.html";
+	}
+</script>
+<?php
+	}else{
+		echo "Erro ao cadastrar item.";
+	}
+}
+
 
 
 # Fechando a conexão com o banco de dados

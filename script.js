@@ -4,3 +4,5 @@ db.transaction(function (tx) {
     tx.executeSql('CREATE TABLE IF NOT EXISTS achado (id INTEGER PRIMARY KEY AUTOINCREMENT, nome_achado TEXT, data_descricao TEXT, quem_achou TEXT, foto BLOB)');
     tx.executeSql('CREATE TABLE IF NOT EXISTS perdido (id INTEGER PRIMARY KEY AUTOINCREMENT, nome_perdido TEXT, data_descricao TEXT, quem_perdeu TEXT, foto BLOB)');
 });
+
+

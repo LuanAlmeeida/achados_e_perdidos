@@ -7,15 +7,16 @@
         <title>Achados e Perdidos</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
             integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="./fontawesome-free-6.0.0-beta2-web/fontawesome-free-6.0.0-beta2-web/css/all.css" rel="stylesheet">
         <link rel="stylesheet" href="css/estilo.css">
+        <script src="./script.js"></script>
     </head>
 
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html"><img src="img/Logo CCHLA transparente texto preto.svg"
-                            alt="Logo" class="logo ml-3" width="60"></a>
+                    <a class="navbar-brand" href="index.html"><img src="img/Logo CCHLA transparente texto preto.svg" alt="Logo" class="logo ml-3" width="60"></a>
                     <a class="navbar-brand" href="index.html">Achados e Perdidos</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -24,10 +25,54 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ml-auto">
-                            <a class="nav-item nav-link active" href="index.html">Página Inicial <span
+                            <a class="nav-item nav-link active" href="index.html"><i class="fas fa-home"></i> Página Inicial <span
                                     class="sr-only">(current)</span></a>
-                            <a class="nav-item nav-link" href="cadastrar.html">Cadastrar</a>
-                            <a class="nav-item nav-link" href="listar.php">Listar</a>
+                            <a class="nav-item nav-link" href="cadastrar.html"><i class="fas fa-plus-circle"></i> Cadastrar</a>
+                            <a class="nav-item nav-link" href="listar.php"><i class="fas fa-list-ul"></i> Listar</a>
+                            <a class="nav-item" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-right: 0;">
+                                <button type="button" class="btn btn-light theme-selector" style="width: 40px; height: 40px; border-radius: 50%;" title="Toque para Alterar o Tema" aria-label="Toque para Alterar o Tema" onclick="toggleTheme()">
+                                    <i class="fas fa-adjust" style="color: #666;"></i>
+                                </button> 
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="position: absolute; top: 64px;">
+                                <a class="dropdown-item" href="#" onclick="document.documentElement.setAttribute('data-theme', ''); toggleTheme();" style="display: flex; " title="Tema Padrão">
+                                    <div style="width: 20px; height: 20px; position: relative;">
+                                        <div style="width: 90%; height: 90%; background-color: #fff; border-radius: 5px; border: 1px solid #000; margin-left: auto; display: flex; align-items: center; justify-content: flex-start;"></div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item" href="#" onclick="document.documentElement.setAttribute('data-theme', ''); toggleTheme();" style="display: flex; " title="Tema Fundo Branco, Texto Preto, Destaque Azul">
+                                    <div style="width: 20px; height: 20px; position: relative;">
+                                        <div style="width: 90%; height: 90%; background-color: #fff; border-radius: 5px; border: 1px solid #000; margin-left: auto; display: flex; align-items: center; justify-content: flex-start;">
+                                            <div style="width: 100%; height: 100%; background-color: #fff; color: #268bd2; font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: center;">A</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item" href="#" onclick="document.documentElement.setAttribute('data-theme', 'light'); toggleTheme();" style="display: flex; " title="Tema Fundo Azul, Texto Branco, Destaque Amarelo">
+                                    <div style="width: 20px; height: 20px; position: relative;">
+                                        <div style="width: 90%; height: 90%; background-color: #fff; border-radius: 5px; border: 1px solid #000; margin-left: auto; display: flex; align-items: center; justify-content: flex-start;">
+                                            <div style="width: 100%; height: 100%; background-color: #268bd2; color: #ffc107; font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: center;">A</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item" href="#" onclick="document.documentElement.setAttribute('data-theme', 'dark'); toggleTheme();" style="display: flex; " title="Tema Fundo Preto, Texto Branco, Destaque Amarelo">
+                                    <div style="width: 20px; height: 20px; position: relative;">
+                                        <div style="width: 90%; height: 90%; background-color: #000; border-radius: 5px; border: 1px solid #000; margin-left: auto; display: flex; align-items: center; justify-content: flex-start;">
+                                            <div style="width: 100%; height: 100%; background-color: #000; color: #ffc107; font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: center;">A</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item" href="#" onclick="document.documentElement.setAttribute('data-theme', 'dark'); toggleTheme();" style="display: flex; " title="Tema Fundo Preto, Texto Branco, Destaque Azul">
+                                    <div style="width: 20px; height: 20px; position: relative;">
+                                        <div
+                                            style="width: 90%; height: 90%; background-color: #000; border-radius: 5px; border: 1px solid #000; margin-left: auto; display: flex; align-items: center; justify-content: flex-start;">
+                                            <div
+                                                style="width: 100%; height: 100%; background-color: #000; color: #268bd2; font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: center;">
+                                                A</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -61,12 +106,61 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-                <div class="text-center">
-                    <p>Rua da Lapa, 150 - 4º andar - SP, São Paulo - SP, 01407-001</p>
-                    <p>(11) 3300-1000 - (11) 3300-1001</p>
-                    <p>cchla@usp.br</p>
+                <div class="d-flex justify-content-between">
+                    <p style="text-align: left">
+                        <span class="d-flex align-items-center">
+                            <span><i class="fas fa-map-marker-alt"></i> Av. Senador Salgado Filho, nº 3000 - CEP 59078-970, Lagoa Nova, </span>
+                        </span>
+                        <span class="d-flex align-items-center">
+                            <span>Universidade Federal do Rio Grande do Norte - UFRN, </span>
+                        </span>
+                        <span class="d-flex align-items-center">
+                            <span>Campus Unisersitário Central, </span>
+                        </span>
+                        <span class="d-flex align-items-center">
+                            <span>Centro de Ciências Humanas, Letras e Artes, </span>
+                        </span>
+                        <span class="d-flex align-items-center">
+                            <span>Natal - Rio Grande do Norte - Brasil.</span>
+                        </span>
+                    </p>
+                    <p style="text-align: right">
+                        <span class="d-flex align-items-center">
+                            <span><i class="fas fa-phone-alt"></i> +55 (84) 3342-2243 / <a style="color: inherit; text-decoration: none" href="https://wa.me/5584991936154?text=Olá%2C%20gostaria%20de%20fazer%20uma%20pergunta%20ou%20atividade%20no%20CCHLA." onmouseover="this.style.color='rgba(0, 0, 0, 0.6)'" onmouseout="this.style.color='inherit'"> +55 (84) 99193-6154 <i class="fab fa-whatsapp"></i></a></span>
+                        </span>
+                        <span class="d-flex align-items-center">
+                            <a style="color:inherit; text-decoration: none" href="mailto:secretariacchla@gmail.com?subject=Contato%20por%20meio%20do%20site%20do%20CCHLA"
+                            onmouseover="this.style.color='rgba(0, 0, 0, 0.6)'" onmouseout="this.style.color='inherit'"><span><i class="fas fa-envelope"></i> secretariacchla@gmail.com</span></a>
+                        </span>
+                    </p>
                 </div>
             </div>
+            <div style="position: fixed; bottom: 50px; right: 50px; z-index: 999; display: none;" id="voltar-ao-topo">
+                <a href="#" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background-color: #007bff; border-radius: 50%; color: white; text-decoration: none; font-size: 24px;">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+            <script>
+                const botaoVoltarAoTopo = document.querySelector("#voltar-ao-topo");
+
+                window.addEventListener("scroll", function () {
+                    if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+                        botaoVoltarAoTopo.style.display = "block";
+                    } else {
+                        botaoVoltarAoTopo.style.display = "none";
+                    }
+                });
+
+                botaoVoltarAoTopo.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+            </script>
+            
+            
         </main>
         <footer class="footer mt-auto py-3">
             <div class="container d-flex align-items-center justify-content-center">
