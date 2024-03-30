@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar - Achados e Perdidos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Achados e Perdidos</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="index.html">Página Inicial <span
+                                class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link active" href="cadastrar.html">Cadastrar</a>
+                        <a class="nav-item nav-link" href="listar.html">Listar</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Cadastrar Item Achado ou Perdido</h1>
+            <form method="post" action="incluir.php" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="nome">Objeto:</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" required>
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label>
+                    <textarea class="form-control" id="descricao" name="descricao" rows="3" placeholder="Descrição"
+                        required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">O Bem Foi:</label>
+                    <select class="form-control" id="tipo" name="tipo" required>
+                        <option value="Achado">Achado</option>
+                        <option value="Perdido">Perdido</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria:</label>
+                    <select class="form-control" id="categoria" name="categoria" required>
+                        <option value="Cartões de Banco/Crédito">Cartões de Banco/Crédito</option>
+                        <option value="Chaves">Chaves</option>
+                        <option value="Celulares">Celulares</option>
+                        <option value="Documentos - Carteira de Estudante">Documentos - Carteira de Estudante</option>
+                        <option value="Documentos - Carteira de Trabalho">Documentos - Carteira de Trabalho</option>
+                        <option value="Documentos - CNH">Documentos - CNH</option>
+                        <option value="Documentos - RG">Documentos - RG</option>
+                        <option value="Eletrônicos">Eletrônicos</option>
+                        <option value="Livros">Livros</option>
+                        <option value="Óculos">Óculos</option>
+                        <option value="Roupas">Roupas</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="local">Local:</label>
+                    <input type="text" class="form-control" id="local" name="local" placeholder="Local onde o Bem foi Encontrado ou Perdido"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="quem">Quem encontrou/perdeu:</label>
+                    <input type="text" class="form-control" id="quem" name="quem" placeholder="Nome de quem Achou ou Perdeu o Bem"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="data">Data em que o Bem foi Encontrado ou Perdido:</label>
+                    <input type="date" class="form-control" id="data" name="data" required>
+                </div>
+                <div class="form-group">
+                    <label for="foto">Anexe uma imagem do bem:</label>
+                    <input type="file" class="form-control-file" id="foto" name="foto">
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted">&copy; 2020 - Grupo 07</span>
+        </div>
+    </footer>
+</body>
+</html>
+
