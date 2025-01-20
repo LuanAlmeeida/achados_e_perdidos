@@ -50,3 +50,10 @@
 .theme-menu input[type="radio"]:checked+label {
     font-weight: bold;
 }
+@media (max-width: 480px) {
+    .responsive-image {
+        width: 80%;
+        height: auto;
+        max-height: 300px;
+    }
+}
